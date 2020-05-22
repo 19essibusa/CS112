@@ -1,0 +1,17 @@
+/*
+ * List.h
+ *
+ *  Created on: Mar 10, 2020
+ *      Author: se27
+ */
+
+#ifndef LIST_H_
+#define LIST_H_
+typedef Item;
+
+class List {
+public:
+	List();
+};
+
+#endif /* LIST_H_ */

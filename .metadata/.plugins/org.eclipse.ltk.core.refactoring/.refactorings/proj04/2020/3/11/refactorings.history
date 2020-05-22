@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;proj04/Vec.h&apos; to &apos;Vec1.h&apos;" description="Rename resource &apos;Vec.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Vec.h" name="Vec1.h" stamp="1584224447188" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;proj04/Vec1.h&apos; to &apos;Vec.h&apos;" description="Rename resource &apos;Vec1.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Vec1.h" name="Vec.h" stamp="1584224461969" updateReferences="true"/>
+</session>

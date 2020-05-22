@@ -1,0 +1,16 @@
+/*
+ * ReversePoemTester.h
+ *
+ *  Created on: May 5, 2020
+ *      Author: se27
+ */
+
+#ifndef REVERSEPOEMTESTER_H_
+#define REVERSEPOEMTESTER_H_
+
+class ReversePoemTester {
+public:
+	ReversePoemTester();
+};
+
+#endif /* REVERSEPOEMTESTER_H_ */

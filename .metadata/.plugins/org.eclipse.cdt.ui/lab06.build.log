@@ -1,0 +1,30 @@
+09:58:50 **** Incremental Build of configuration Debug for project lab06 ****
+make all 
+Building file: ../Experiment0.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Experiment0.d" -MT"Experiment0.o" -o "Experiment0.o" "../Experiment0.cpp"
+Finished building: ../Experiment0.cpp
+ 
+Building file: ../Experiment1.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Experiment1.d" -MT"Experiment1.o" -o "Experiment1.o" "../Experiment1.cpp"
+Finished building: ../Experiment1.cpp
+ 
+Building file: ../Experiment2.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Experiment2.d" -MT"Experiment2.o" -o "Experiment2.o" "../Experiment2.cpp"
+Finished building: ../Experiment2.cpp
+ 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: lab06
+Invoking: GCC C++ Linker
+g++  -o "lab06"  ./Experiment0.o ./Experiment1.o ./Experiment2.o ./main.o   
+Finished building target: lab06
+ 
+
+09:58:52 Build Finished. 0 errors, 0 warnings. (took 1s.573ms)
+

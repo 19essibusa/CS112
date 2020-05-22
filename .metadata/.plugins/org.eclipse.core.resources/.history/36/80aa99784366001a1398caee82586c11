@@ -1,0 +1,135 @@
+/*
+ * List.cpp
+ *
+ *  Created on: Mar 10, 2020
+ *      Author: Julien Camy (jjc34)
+ *      Author: Einstein Essibu(se27)
+ *
+ */
+
+#include "List.h"
+#include <stdexcept>
+using namespace std;
+
+/*
+ * Initialize default List
+ */
+List::List() {
+	mySize = 0;
+	myFirst = myLast = nullptr;
+
+}
+
+/*
+ * Initialize default Node
+ */
+List::Node::Node()
+{
+	myItem = Item();
+	myNext = nullptr;
+}
+/*
+ * Explicit Node constructor
+ */
+List::Node::Node(const Item& it, Node* next){
+	myItem = it;
+	myNext = next;
+
+}
+/*
+ * Append items to end of list
+ */
+void List::append(const Item& item){
+	Node* nPtr = new Node(item, nullptr);
+	if (mySize == 0) { // empty case
+		myFirst = nPtr;
+	} else {
+		myLast->myNext = nPtr;
+	}
+	myLast = nPtr;
+	++mySize;
+}
+
+/*
+ * return item in first node
+ */
+Item List::getFirst() const{
+	if (mySize <= 0 || myFirst == NULL){
+		throw underflow_error("No items in List");
+	}else{
+		return myFirst->myItem;
+	}
+}
+/*
+ * return item in last node
+ */
+Item List::getLast() const{
+	if (mySize <= 0 || myFirst == NULL){
+		throw underflow_error("No items in List");
+	}else{
+		return myLast->myItem;
+	}
+}
+/*
+ * delete list
+ */
+List::~List() {
+	delete myFirst;          // delete first node, invoking ~Node() (does nothing if myFirst == NULL)
+	myFirst = myLast = NULL; // clear myFirst and myLast (optional)
+	mySize = 0;              // clear mySize (optional)
+}
+
+/*
+ * Delete Node
+ */
+List::Node::~Node() {
+	delete myNext;       // delete the next node, invoking ~Node() in it
+	// (does nothing if myNext == NULL)
+}
+
+/*
+ * deep copy constructor
+ */
+List::List(const List& original) {
+	myFirst = myLast = NULL;       //  set pointers
+	mySize = 0;                    //   and size to 'empty' values
+	Node* oPtr = original.myFirst; //  start at the first node
+	while (oPtr != NULL) {         //  while there are nodes to copy:
+		append(oPtr->myItem);       //   append the item in that node
+		oPtr = oPtr->myNext;        //   advance to next node
+	}
+}
+
+/*
+ * Assignment operation
+ */
+List& List::operator=(const List& original) {
+	if (this != &original){
+		delete myFirst;
+		myFirst = myLast = NULL;
+		mySize = 0;
+		Node* nPtr;
+		nPtr = original.myFirst;
+		while (nPtr != NULL){
+			append(nPtr->myItem);
+			nPtr = nPtr-> myNext;
+		}
+
+	}
+	return *this;
+}
+
+
+bool List::operator!=(const List& list2) {
+	if (mySize == list2.mySize) {
+		Node * temp2 = list2.myFirst;
+		for (Node * temp1 = myFirst; temp1; temp1 = temp1->myNext) {
+			if (temp1->myItem != temp2->myItem) {
+				return true;
+			}
+			temp2 = temp2->myNext;
+		}
+		return false;
+	}
+	return true;
+}

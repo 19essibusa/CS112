@@ -1,0 +1,40 @@
+12:41:53 **** Auto Build of configuration Debug for project proj02 ****
+make all 
+Building file: ../ArrayTester.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"ArrayTester.d" -MT"ArrayTester.o" -o "ArrayTester.o" "../ArrayTester.cpp"
+Finished building: ../ArrayTester.cpp
+ 
+Building file: ../array.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"array.d" -MT"array.o" -o "array.o" "../array.cpp"
+Finished building: ../array.cpp
+ 
+Building file: ../hexList.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"hexList.d" -MT"hexList.o" -o "hexList.o" "../hexList.cpp"
+Finished building: ../hexList.cpp
+ 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building file: ../part1.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"part1.d" -MT"part1.o" -o "part1.o" "../part1.cpp"
+Finished building: ../part1.cpp
+ 
+Building file: ../part2.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"part2.d" -MT"part2.o" -o "part2.o" "../part2.cpp"
+Finished building: ../part2.cpp
+ 
+Building target: proj02
+Invoking: GCC C++ Linker
+g++  -o "proj02"  ./ArrayTester.o ./array.o ./hexList.o ./main.o ./part1.o ./part2.o   
+Finished building target: proj02
+ 
+
+12:41:55 Build Finished. 0 errors, 0 warnings. (took 2s.149ms)
+

@@ -1,0 +1,14 @@
+/*
+ * List.cpp
+ *
+ *  Created on: Mar 10, 2020
+ *      Author: se27
+ */
+
+#include "List.h"
+
+List::List() {
+	// TODO Auto-generated constructor stub
+
+}
+

@@ -1,0 +1,126 @@
+/* Vec.cpp defines the methods for Vec, a simple vector class.
+ * Student Name:
+ * Date:
+ * Begun by: Joel C. Adams, for CS 112 at Calvin University.
+ */
+
+#include "Vec.h"
+
+Vec::Vec()
+{
+	mySize = 0;
+	myArray = NULL;
+}
+
+Vec::Vec(unsigned size)
+{
+	mySize = size;
+
+	if (mySize > 0)
+	{
+		myArray = new Item[size]();
+	}
+
+	else
+	{
+		myArray = NULL;
+	}
+}
+
+Vec::Vec(const Vec& original) {
+	mySize = original.mySize;
+	myArray = new Item[mySize]();
+
+
+	if (original.mySize > 0)
+	{
+
+		for (unsigned i = 0; i < mySize; ++i)
+		{
+			myArray[i] = original.myArray[i];
+		}
+	}
+
+
+	else
+	{
+		mySize = 0;
+		myArray = NULL;
+	}
+
+
+}
+
+Vec::~Vec()
+{
+	mySize = 0;
+	delete [] myArray;
+	myArray = NULL;
+}
+
+Vec& Vec::operator=(const Vec& original)
+{
+	myArray = new Item[mySize]();
+	if(mySize == original.mySize)
+	{
+		return*this;
+	}
+
+	else if(mySize == 0)
+	{
+		mySize = 0;
+		delete [] myArray;
+		myArray = NULL;
+
+		return*this;
+	}
+
+	else
+	{
+		mySize = original.mySize;
+		delete [] myArray;
+		myArray = new Item[mySize];
+
+		for (unsigned i = 0; i < mySize; ++i)
+		{
+			myArray[i] = original.myArray[i];
+		}
+		return*this;
+	}
+
+
+
+
+}
+
+
+unsigned Vec::getSize() const
+{
+	return mySize;
+}
+
+void Vec::setItem(unsigned index, const Item& it)
+{
+	if (index >= mySize || index < 0 || mySize == 0) {
+		throw range_error("The range cannot be found");
+	} else {
+		myArray[index] = it;
+	}
+}
+
+Item Vec::getItem(unsigned index) const
+{
+
+	if (index != mySize)
+	{
+		throw range_error("The range is invalid");
+	}
+	else
+	{
+		return myArray[index];
+	}
+
+
+
+
+}

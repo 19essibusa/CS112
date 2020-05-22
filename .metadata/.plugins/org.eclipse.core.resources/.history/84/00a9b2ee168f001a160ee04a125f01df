@@ -1,0 +1,35 @@
+/*
+ * ReversePoemTester.cpp
+ *
+ *  Created on: April 2020
+ *      Author: se27
+ */
+
+#include "ReversePoemTester.h"
+
+void ReversePoemTester::runTests() {
+	cout << "Testing ReversePoem class" << endl;
+	testConstructors();
+	testGetters();
+	cout << "All tests passed!" << endl;
+}
+
+void ReversePoemTester::testConstructors() {
+	cout << "- Testing constructor..." << flush;
+	ReversePoem reverseTest("Poems/anorexia.txt");
+	assert( reverseTest.myAuthor == "Anonymous\r" );
+	assert( reverseTest.myTitle == "Anorexia\r" );
+	assert( reverseTest.myBody == "I hate the girl in the mirror\r\rI so you'll never hear me say that\r\rI I'm good enough\r\r");
+	assert( reverseTest.myBodyReversed == "I'm good enough\r\rI  so you'll never hear me say that\r\rI I hate the girl in the mirror\r\r");
+	cout << "Passed!" << endl;
+}
+
+void ReversePoemTester::testGetters() {
+	cout << "- Testing getters..." << flush;
+	ReversePoem reverseTest("Poems/anorexia.txt");
+	cout << "Passed" << endl;assert( reverseTest.myAuthor == "Anonymous\r" );
+	assert( reverseTest.myTitle == "anorexia\r" );
+	assert( reverseTest.myBody == "I hate the girl in the mirror\r\rI so you'll never hear me say that\r\rI I'm good enough\r\r");
+	assert( reverseTest.myBodyReversed == "I'm good enough\r\rI  so you'll never hear me say that\r\rI I hate the girl in the mirror\r\r");
+	cout << "Passed!" << endl;
+}

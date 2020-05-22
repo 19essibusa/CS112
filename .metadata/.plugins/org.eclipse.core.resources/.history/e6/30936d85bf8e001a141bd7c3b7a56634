@@ -1,0 +1,16 @@
+/*
+ * ReversePoem.h
+ *
+ *  Created on: May 5, 2020
+ *      Author: se27
+ */
+
+#ifndef REVERSEPOEM_H_
+#define REVERSEPOEM_H_
+
+class ReversePoem {
+public:
+	ReversePoem();
+};
+
+#endif /* REVERSEPOEM_H_ */

@@ -1,0 +1,169 @@
+/* Matrix.cpp defines Matrix class methods.
+ * Student Name: Eric Klomp edk22, Nathan Minderhoud njm25
+ * Date:3/3/20
+ * Begun by: Joel Adams, for CS 112 at Calvin University.
+ */
+
+#include "Matrix.h"
+#include <cassert>
+#include <cstdlib>
+
+
+// Default constructor
+Matrix::Matrix() {
+	myRows = myColumns = 0;
+}
+
+
+// Get methods
+unsigned Matrix::getRows() const {
+	return myRows;
+}
+
+// Get methods
+unsigned Matrix::getColumns() const {
+	return myColumns;
+}
+
+// Explicit Constructor
+Matrix::Matrix(unsigned rows, unsigned columns) {
+	myRows = rows;
+	myColumns = columns;
+	myVec.setSize(rows);
+	for (unsigned i = 0; i < rows; i++) {
+		myVec[i].setSize(columns);
+	}
+}
+
+//subscript operator readTo
+Vec<Item>& Matrix::operator[](unsigned index){
+	if (index >= myRows) {
+		throw range_error("Index out of range");
+	}
+	else {
+		return myVec[index];
+	}
+}
+
+//subscript operator writeTo
+const Vec<Item>& Matrix::operator[](unsigned index) const{
+	if (index >= myRows) {
+		throw range_error("Index out of range");
+	}
+	else {
+		return myVec[index];
+	}
+}
+
+
+// Inequality method
+bool Matrix::operator==(const Matrix& m2) const {
+     if ( myRows != m2.getRows() || myColumns != m2.getColumns() ) {
+    	 return false;
+     }
+     else {
+    	 return myVec == m2.myVec;
+     }
+}
+bool Matrix::operator!=(const Matrix& m2) const {
+	if (myRows != m2.getRows() || myColumns != m2.getColumns()){
+		return true;
+	} else {
+		return myVec == m2.myVec;
+	}
+}
+
+void Matrix::readFrom(istream& in){
+	for(unsigned i = 0 ; i < myRows ; ++i){
+		for( unsigned j = 0; j < myColumns; ++j){
+			in >> myVec[i][j];
+		}
+	}
+}
+void Matrix::writeTo(ostream& out) const{
+
+	for (unsigned i = 0; i < myRows; i++){
+		myVec[i].writeTo(out);
+		out << endl;
+
+	}
+}
+/* Matrix readFrom method...
+ * @param: fileName, a file
+ * Precondition: file is filled with myRows and myColumns and values
+ * Postcondition: Matrix of row myRows and columns myColumns is filled with values from fileName
+ */
+void Matrix::readFrom(const string& fileName){
+	ifstream fin(fileName);
+	fin >> myRows;
+	fin >> myColumns;
+	myVec.setSize(myRows);
+	for (unsigned i = 0; i < myRows; i++){
+		myVec[i].setSize(myColumns);
+		for( unsigned j = 0; j < myColumns; ++j){
+			fin >> myVec[i][j];
+		}
+	}
+	fin.close();
+}
+
+void Vec::writeTo(const string fileName){
+	ofstream fout(fileName);
+	fout << mySize << endl;
+	string str;
+	Item num;
+	for (unsigned i=0; i< mySize; i++){
+		num = myArray[i];
+		str = to_string(num);
+		num = atoi(str.c_str());
+		fout << str << endl;
+	}
+	fout.close();
+}
+
+Matrix Matrix::operator+(const Matrix& m2) const {
+	if (myRows != m2.getRows()){
+		throw invalid_argument("Rows must be equal");
+	} else if (myColumns != m2.getColumns()){
+		throw invalid_argument("Columns must be equal");
+	} else {
+		Matrix m3(myRows, myColumns);
+		for (unsigned i = 0; i < myRows; i++){
+				for( unsigned j = 0; j < myColumns; ++j){
+					m3.myVec[i][j] = myVec[i][j] + m2.myVec[i][j];
+				}
+			}
+		return m3;
+	}
+}
+
+Matrix Matrix::operator-(const Matrix& m2) const {
+	if (myRows != m2.getRows()){
+		throw invalid_argument("Rows must be equal");
+	} else if (myColumns != m2.getColumns()){
+		throw invalid_argument("Columns must be equal");
+	} else {
+		Matrix m3(myRows, myColumns);
+		for (unsigned i = 0; i < myRows; i++){
+				for( unsigned j = 0; j < myColumns; ++j){
+					m3.myVec[i][j] = myVec[i][j] - m2.myVec[i][j];
+				}
+			}
+		return m3;
+	}
+}
+
+Matrix Matrix::getTranspose(){
+
+	Matrix m1(myColumns, myRows);
+
+	for (unsigned i = 0; i < myRows; i++){
+		for (unsigned j = 0; j < myColumns; j++){
+			m1.myVec[j][i] = myVec[i][j] ;
+		}
+	}
+	unsigned temprows = myColumns;
+	m1.myColumns = myRows;
+	m1.myRows = temprows;
+	return m1;
+}

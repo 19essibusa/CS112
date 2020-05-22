@@ -1,0 +1,53 @@
+/*
+ * Application.cpp
+ *
+ *  Created on: Feb 17, 2020
+ *      Author: se27
+ */
+
+#include "Application.h"
+#include "PlayList.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Application::RunApp()
+{
+	PlayList pList("testSongs.txt");
+	int input1;
+	cout << " Welcome to the PlayList Manager!" << endl;
+	cout << " Please enter:" << endl;
+	cout << "   1 - to search the playlist for songs by a given artist" << endl;
+	cout << "   2 - to search the playlist for songs from a given year" << endl;
+	cout << "   3 - to search the playlist for songs with a given phrase in their title" << endl;
+	cout << "   4 - to add a new song to the playlist" << endl;
+	cout << "   // ... other options ..." << endl;
+	cout << "   0 - to quit" << endl;
+	cout << "--->" << endl;
+	cin >> input1;
+
+	if (input1 ==1 )
+	{
+		string artist;
+		cout << "Please type the name of the artist" << endl;
+		getline(cin, artist);
+		vector<Song> searchResult = pList.searchByArtist(artist);
+
+		if (artist.size()==0)
+		{
+			cout << "Your Artist Couln't be found" << endl;
+		}
+		else
+		{
+		for (unsigned i = 0; i < searchResult.size(); i++ )
+		{
+			cout << searchResult[i].getTitle() << flush;
+			cout << searchResult[i].getYear() << flush;
+			cout << searchResult[i].getArtist() << endl;
+		}
+		}
+		}
+	}
+
+}
+

@@ -1,0 +1,15 @@
+17:18:55 **** Incremental Build of configuration Debug for project lab05 ****
+make all 
+Building file: ../ListTester.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"ListTester.d" -MT"ListTester.o" -o "ListTester.o" "../ListTester.cpp"
+Finished building: ../ListTester.cpp
+ 
+Building target: lab05
+Invoking: GCC C++ Linker
+g++  -o "lab05"  ./List.o ./ListTester.o ./tester.o   
+Finished building target: lab05
+ 
+
+17:18:56 Build Finished. 0 errors, 0 warnings. (took 425ms)
+

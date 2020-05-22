@@ -1,0 +1,2 @@
+rm -f runTimeTrials tester a.out *~ *# *.o
+Build complete

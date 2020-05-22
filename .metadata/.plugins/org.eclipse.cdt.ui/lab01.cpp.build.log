@@ -1,0 +1,19 @@
+12:46:32 **** Auto Build of configuration Debug for project lab01.cpp ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: lab01.cpp
+Invoking: GCC C++ Linker
+g++  -o "lab01.cpp"  ./main.o   
+/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+makefile:44: recipe for target 'lab01.cpp' failed
+make: *** [lab01.cpp] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+12:46:33 Build Failed. 3 errors, 0 warnings. (took 478ms)
+

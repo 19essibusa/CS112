@@ -1,0 +1,79 @@
+23:12:43 **** Build of configuration Debug for project proj01 ****
+make all 
+Building file: ../ArrayTester.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"ArrayTester.d" -MT"ArrayTester.o" -o "ArrayTester.o" "../ArrayTester.cpp"
+../ArrayTester.cpp: In member function 'void ArrayTester::testInitialize()':
+../ArrayTester.cpp:56:2: error: 'initialize' was not declared in this scope
+  initialize(a1, 3);
+  ^~~~~~~~~~
+../ArrayTester.cpp:56:2: note: suggested alternative: 'testInitialize'
+  initialize(a1, 3);
+  ^~~~~~~~~~
+  testInitialize
+../ArrayTester.cpp: In member function 'void ArrayTester::testPrint()':
+../ArrayTester.cpp:76:2: error: 'print' was not declared in this scope
+  print(a1, 3);
+  ^~~~~
+../ArrayTester.cpp:76:2: note: suggested alternative: 'printf'
+  print(a1, 3);
+  ^~~~~
+  printf
+In file included from /usr/include/c++/7/cassert:44:0,
+                 from ../ArrayTester.h:12,
+                 from ../ArrayTester.cpp:8:
+../ArrayTester.cpp: In member function 'void ArrayTester::testAverage()':
+../ArrayTester.cpp:88:10: error: 'average' was not declared in this scope
+  assert( average(a1, 3) == 2  );
+          ^
+../ArrayTester.cpp: In member function 'void ArrayTester::testSum()':
+../ArrayTester.cpp:98:10: error: 'sum' was not declared in this scope
+  assert( sum(a1, 3) == 6 );
+          ^
+../ArrayTester.cpp: In member function 'void ArrayTester::testResize()':
+../ArrayTester.cpp:109:2: error: 'resize' was not declared in this scope
+  resize(a1, 3, 7);
+  ^~~~~~
+../ArrayTester.cpp:109:2: note: suggested alternative: 'dysize'
+  resize(a1, 3, 7);
+  ^~~~~~
+  dysize
+../ArrayTester.cpp: In member function 'void ArrayTester::testConcat()':
+../ArrayTester.cpp:135:2: error: 'concat' was not declared in this scope
+  concat(a1, size1, a2, size2, a3, size3);
+  ^~~~~~
+../ArrayTester.cpp:135:2: note: suggested alternative: 'wcsncat'
+  concat(a1, size1, a2, size2, a3, size3);
+  ^~~~~~
+  wcsncat
+../ArrayTester.cpp: In member function 'void ArrayTester::testFill()':
+../ArrayTester.cpp:166:33: error: no matching function for call to 'fill(const char [14], double*&, unsigned int&)'
+  fill("arrayData.txt", a1, size1);
+                                 ^
+In file included from /usr/include/c++/7/bits/char_traits.h:39:0,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from ../ArrayTester.h:11,
+                 from ../ArrayTester.cpp:8:
+/usr/include/c++/7/bits/stl_algobase.h:724:5: note: candidate: template<class _ForwardIterator, class _Tp> void std::fill(_ForwardIterator, _ForwardIterator, const _Tp&)
+     fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)
+     ^~~~
+/usr/include/c++/7/bits/stl_algobase.h:724:5: note:   template argument deduction/substitution failed:
+../ArrayTester.cpp:166:33: note:   deduced conflicting types for parameter '_ForwardIterator' ('const char*' and 'double*')
+  fill("arrayData.txt", a1, size1);
+                                 ^
+../ArrayTester.cpp: In member function 'void ArrayTester::testRead()':
+../ArrayTester.cpp:184:2: error: 'read' was not declared in this scope
+  read(fin, a4, 5);                  // read 5 values instead of 6
+  ^~~~
+../ArrayTester.cpp:184:2: note: suggested alternative: 'fread'
+  read(fin, a4, 5);                  // read 5 values instead of 6
+  ^~~~
+  fread
+subdir.mk:33: recipe for target 'ArrayTester.o' failed
+make: *** [ArrayTester.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+23:12:44 Build Failed. 10 errors, 0 warnings. (took 454ms)
+

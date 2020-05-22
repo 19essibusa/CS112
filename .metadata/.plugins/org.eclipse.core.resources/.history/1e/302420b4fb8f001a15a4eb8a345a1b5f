@@ -1,0 +1,81 @@
+/*
+ * PalindromeChecker.cpp
+ *
+ *  Created on: Apr 19, 2020
+ *      Author: Einstein Essibu
+ */
+
+#include "PalindromeTester.h"
+#include <cctype>
+
+// Constructor
+PalindromeChecker::PalindromeChecker(const string& fileNameIn, const string& fileNameOut) {
+	myFileIn = fileNameIn;
+	myFileOut = fileNameOut;
+	palindromeDetector(myFileIn, myFileOut);
+}
+
+
+bool PalindromeChecker::isPalindrome(const string& palindrome) {
+	if (palindrome.length() == 0) {
+		return false;
+	}
+	Stack<char> s1(1);
+	ArrayQueue<char> q1(1);
+
+	for (unsigned i = 0; i < palindrome.length(); i++) {
+		if (isalpha(palindrome[i])) {
+			try {
+				q1.append(tolower(palindrome[i]));
+			} catch (FullQueueException& se) {
+				q1.setCapacity(q1.getCapacity() * 2);
+				q1.append(tolower(palindrome[i]));
+			}
+			try {
+				s1.push(tolower(palindrome[i]));
+			} catch (StackException& se) {
+				s1.setCapacity(s1.getCapacity() * 2);
+				s1.push(tolower(palindrome[i]));
+			}
+		}
+	}
+
+	char ch1;
+	char ch2;
+	unsigned length = q1.getSize();
+
+	for (unsigned i = 0; i < length; i++) {
+		ch1 = s1.pop();
+		ch2 = q1.remove();
+		if (ch1 != ch2) {
+			return false;
+		}
+	}
+	return true;
+}
+
+// adds " ***" when line is a palindrome
+void PalindromeChecker::palindromeDetector(const string& fileNameIn, const string& fileNameOut) {
+	ifstream fin(fileNameIn.c_str());
+		ofstream fout(fileNameOut.c_str());
+		string tempStr;
+		while (fin) {
+			getline(fin, tempStr);
+
+			if (isPalindrome(tempStr)) {
+				fout << tempStr + " ***" << endl;
+			} else {
+				fout << tempStr << endl;
+			}
+		}
+		fin.close();
+		fout.close();
+	}
+
+
+
+
+
+
+//
+//
