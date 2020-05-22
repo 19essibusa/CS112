@@ -1,3 +1,0 @@
-make -f ../../Makefile
-make: *** No rule to make target 'runTimeTrials.cpp', needed by 'runTimeTrials.o'.  Stop.
-Build complete (1 errors, 0 warnings): /home/se27/cs112/lab10/build/make.run.linux.x86_64

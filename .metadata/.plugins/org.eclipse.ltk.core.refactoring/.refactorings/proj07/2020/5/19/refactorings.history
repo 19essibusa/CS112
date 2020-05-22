@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;proj07/Poems/anorexia&apos; to &apos;anorexia.txt&apos;" description="Rename resource &apos;anorexia&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Poems/anorexia" name="anorexia.txt" stamp="1588713748158" updateReferences="true"/>
-</session>

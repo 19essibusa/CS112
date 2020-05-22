@@ -1,0 +1,60 @@
+Running List tests...
+Testing insertBefore()... 1  2 Passed!
+Testing insertAfter()... 1  2 Passed!
+All tests passed!
+Ann and Bob have started a Conga Line!
+
+ Ann=>Bob
+
+Conga, Conga, Con-GA!  Conga, Conga, Con-GA!
+
+Please enter:
+ 1 to join the Conga line at the end
+ 2 to join the Conga line after a particular person
+ 3 to join the Conga line before a particular person
+ 4 to quit
+--> 1
+
+What is your name? Richmond
+
+ Ann=>Bob=>Richmond
+
+Conga, Conga, Con-GA!  Conga, Conga, Con-GA!
+
+Please enter:
+ 1 to join the Conga line at the end
+ 2 to join the Conga line after a particular person
+ 3 to join the Conga line before a particular person
+ 4 to quit
+--> 2
+
+What is your name? Kofi
+Who do you want to follow? Ann
+
+ Ann=>Kofi=>Bob=>Richmond
+
+Conga, Conga, Con-GA!  Conga, Conga, Con-GA!
+
+Please enter:
+ 1 to join the Conga line at the end
+ 2 to join the Conga line after a particular person
+ 3 to join the Conga line before a particular person
+ 4 to quit
+--> 3
+
+What is your name? Eli
+Who do you want to precede? Bob
+
+ Ann=>Kofi=>Eli=>Bob=>Richmond
+
+Conga, Conga, Con-GA!  Conga, Conga, Con-GA!
+
+Please enter:
+ 1 to join the Conga line at the end
+ 2 to join the Conga line after a particular person
+ 3 to join the Conga line before a particular person
+ 4 to quit
+--> 4
+
+The dance is done!
+

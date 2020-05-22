@@ -1,0 +1,17 @@
+ldoubleVal -0x7ffc82fe54d0
+doubleVal -0x7ffc82fe5480
+floatVal -0x7ffc82fe5478
+longVal - 0x7ffc82fe5488
+intVal -0x7ffc82fe547c
+shortVal -0x7ffc82fe5476
+charVal1: 0x7ffc82fe5473
+charVal2: 0x7ffc82fe5474
+boolVal -0x7ffc82fe5475
+long double -0x7ffc82fe5490
+double -0x7ffc82fe5498
+float -0x7ffc82fe54a0
+long -0x7ffc82fe54a8
+int -0x7ffc82fe54b0
+short -0x7ffc82fe54b8
+char -0x7ffc82fe54c0
+bool -0x7ffc82fe54c8

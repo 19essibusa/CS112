@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;lab11/ accountInfo.txt&apos; to &apos;accountInfo.txt&apos;" description="Rename resource &apos; accountInfo.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input=" accountInfo.txt" name="accountInfo.txt" stamp="1589207707838" updateReferences="true"/>
-</session>

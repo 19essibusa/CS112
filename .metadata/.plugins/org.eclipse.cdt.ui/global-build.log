@@ -1,4 +1,0 @@
-Building in: /home/se27/cs112/proj10/build/default
-make -f ../../Makefile clean
-rm -f runTimeTrials tester a.out *~ *# *.o
-Build complete

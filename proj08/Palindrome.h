@@ -1,0 +1,29 @@
+/*
+ * Palindrome.h
+ *
+ *  Created on: Apr 20, 2020
+ *      Author: Einstein Essibu
+ */
+
+#ifndef PALINDROMECHECKER_H_
+#define PALINDROMECHECKER_H_
+#include "Stack.h"
+#include "ArrayQueue.h"
+#include <fstream>
+#include <cassert>
+#include <cstdlib>
+using namespace std;
+
+class PalindromeChecker {
+public:
+	PalindromeChecker(const string& fileNameIn, const string& fileNameOut);
+	void palindromeDetector(const string& fileNameIn, const string& fileNameOut);
+	bool isPalindrome(const string& line);
+private:
+	string myFileIn;
+	string myFileOut;
+};
+
+
+
+#endif /* PALINDROMECHECKER_H_ */

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;lab03/VecTest1.txt&apos; to &apos;vecTest1.txt&apos;" description="Rename resource &apos;VecTest1.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="VecTest1.txt" name="vecTest1.txt" stamp="1582922848852" updateReferences="true"/>
-</session>
